@@ -1,0 +1,33 @@
+[project]
+name = "curve2vec"
+version = "0.1.3"
+authors = [
+    {name="Daniel Cieśliński", email="daniel98c@gmail.com"},
+]
+description = "A Python package for generating vector embeddings of curves"
+keywords = ["curve", "embedding", "representation", "vector"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10"
+]
+
+[dependencies]
+numpy = ">=1.21.0"
+scipy = ">=1.7.0"
+scikit-learn = ">=1.0.0"
+pyefd = ">=1.4.1"
+matplotlib = ">=3.4.3"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+"Homepage" = "https://github.com/danielcieslinski/curve2vec"
+"Bug Tracker" = "https://github.com/danielcieslinski/curve2vec/issues"

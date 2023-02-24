@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='curve2vec',
-    version='0.1.0',
+    version='0.1.3',
     author='Daniel Cieśliński',
     author_email='daniel98c@gmail.com',
     description='A Python package for generating vector embeddings of curves',
@@ -20,11 +20,12 @@ setup(
     ],
     keywords='curve embedding representation vector',
     install_requires=[
-        'numpy>=1.21.1',
-        'scipy>=1.7.1',
-        'scikit-learn>=0.24.2',
+        'numpy',
+        'scipy',
+        'scikit-learn',
         'pyefd',
         'matplotlib'
     ],
     python_requires='>=3.7',
+    package_dir = {'curve2vec':'src/curve2vec'}
 )
