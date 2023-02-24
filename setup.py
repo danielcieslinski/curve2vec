@@ -23,6 +23,8 @@ setup(
         'numpy>=1.21.1',
         'scipy>=1.7.1',
         'scikit-learn>=0.24.2',
+        'pyefd',
+        'matplotlib'
     ],
     python_requires='>=3.7',
 )
