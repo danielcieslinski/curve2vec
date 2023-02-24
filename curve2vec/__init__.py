@@ -1,2 +1,2 @@
-from embeddings import fourier
-from utils import data, visualization
+# from embeddings import fourier
+# from utils import data, visualization

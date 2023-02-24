@@ -11,7 +11,7 @@ The package can be installed via pip:
 At the moment the only available method for extraction are FourierDescriptors. First create a FourierDescriptors object, which is used to specify the order of the Fourier descriptors and other options:
 
 ```py
-from curve2vec.embeddings import FourierDescriptors
+from curve2vec.embeddings.fourier import FourierDescriptors
 
 fd = FourierDescriptors(order=20, normalize=True, size_invariant=True)
 ```

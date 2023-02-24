@@ -1,6 +1,6 @@
 import numpy as np
-from src.curve2vec.utils import visualization
-from src.curve2vec.utils.data import generate_random_walk_curves
+from curve2vec.utils import visualization
+from curve2vec.utils.data import generate_random_walk_curves
 
 # Test visualize.py
 # Generate a random curve
