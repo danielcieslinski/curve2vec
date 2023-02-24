@@ -1,5 +1,5 @@
 import numpy as np
-from pyefd import elliptic_fourier_descriptors
+from pyefd import elliptic_fourier_descriptors, normalize_efd, reconstruct_contour
 
 class FourierDescriptors:
     def __init__(self, order=10, normalize=False, size_invariant=True):
@@ -19,3 +19,6 @@ class FourierDescriptors:
     def fit_transform(self, X):
         self.fit(X)
         return self.coeffs
+
+    def reconstruct(self, X, locus=(0,0), num_points=100):
+        return np.array([reconstruct_contour(coeffs, locus=locus, num_points=num_points) for coeffs in X])

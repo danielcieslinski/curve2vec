@@ -1,46 +1,38 @@
-# curve2vec
+# Curve2Vec
+Curve2Vec is a Python package for computing vector embeddings of curves. The resulting embeddings can be used for tasks such as clustering, classification, and similarity search. The package is in its early stage and is under active development.
 
-curve2vec is a Python library that provides various algorithms for creating vector embeddings of closed curves.
-
-### Installation
-
-You can install curve2vec using pip:
+## Installation
+The package can be installed via pip:
 
 `pip install curve2vec`
 
-### Usage
-
-Here's an example of how to use curve2vec to create a Fourier descriptor embedding of a curve:
+## Usage
+### Extracting Features
+At the moment the only available method for extraction are FourierDescriptors. First create a FourierDescriptors object, which is used to specify the order of the Fourier descriptors and other options:
 
 ```py
-import curve2vec.embeddings.fourier as fourier
+from curve2vec.embeddings import FourierDescriptors
 
-# create a closed curve as a numpy array of (x,y) coordinates
-curve = ...
-
-# create a Fourier descriptor embedding of the curve
-embedding = fourier.descriptor(curve, num_coeff=10)
-
-print(embedding)
+fd = FourierDescriptors(order=20, normalize=True, size_invariant=True)
 ```
 
-### Supported algorithms
+Once you have created the FourierDescriptors object, you can use its fit_transform method to extract features from a set of curves:
 
-curve2vec supports the following curve embedding algorithms:
+```py
+import numpy as np
 
-- Fourier descriptors: Lossless embedding suitable for reconstructing the original curve. Good for curves with smooth, regular shapes.
-- Continuous wavelet transform: Non-linear embedding that may result in information loss. Good for curves with local, non-uniform features.
-- Shape context: Lossless embedding suitable for reconstructing the original curve. Good for curves with distinctive, repeated features.
-- Curvature scale space: Lossless embedding suitable for reconstructing the original curve. Good for curves with sharp, angular features.
-- Fractal dimension: Lossless embedding suitable for reconstructing the original curve. Good for curves with self-similar, fractal properties.
-- Convolutional neural network: Non-linear embedding that may result in information loss. Good for curves with complex, irregular shapes.
-- Long short-term memory neural network: Non-linear embedding that may result in information loss. Good for curves with sequential, time-dependent features.
-- Symbolic aggregate approximation: Non-linear embedding that may result in information loss. Good for curves with distinctive, repeated patterns.
+# X is a numpy array of curves, where each curve is an array of 2D points
+X = np.array([...])
 
-### Contributing
+# Extract features from curves using Fourier descriptors
+features = fd.fit_transform(X)
+```
 
-Contributions to curve2vec are welcome! If you find a bug or would like to propose a new feature or algorithm, please submit an issue or pull request on GitHub.
+## Future Work
 
-### License
+In the future, Curve2Vec will support n-dimensional curves and many different embedding algorithms. 
+It'll also provide basic utilities needed for working with curves, like curve resampling.
 
-curve2vec is licensed under the MIT License. See LICENSE for more information.
+
+## Contributing
+Contributions to Curve2Vec are welcome! If you find a bug or have a feature request, please open an issue on the Github repository. If you would like to contribute code, please fork the repository and submit a pull request
